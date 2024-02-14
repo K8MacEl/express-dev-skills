@@ -11,12 +11,13 @@ const skills = [
 	getAll, // shorthand for getAll: getAll
 	getOne // shorthand for getOne: GetOne
 
-	// getOne: getOne
   };
   
   function getAll() {
 	return skills;
   }
+
+  
 
   function getOne(id) {
 	// URL params are strings - convert to a number

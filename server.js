@@ -22,7 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //WHERE WE MOUNT OUT ROUTES!
 app.use('/', indexRouter);
-app.use('/users', skillsRouter);
+app.use('/skills', skillsRouter);
+// app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
