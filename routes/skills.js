@@ -17,9 +17,12 @@ router.get('/new', skillsCtrl.new);
 
 //:id is called a request paremeter
 //GET /skills
+//GET /skills/:id
 router.get('/:id', skillsCtrl.show);
 //POST /skills
 router.post('/', skillsCtrl.create);
-//GET /skills/:id
+//DELETE /skills/:id
+
+
 module.exports = router;
 // GET /skill/new <--this new route cannot stay here!
