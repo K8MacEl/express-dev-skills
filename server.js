@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 
 var indexRouter = require('./routes/index');
 var skillsRouter = require('./routes/skills');
@@ -18,7 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); //will always match the values of <input>'s name attributes, so for this its skill//
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+//('_method') can be anything but pick something from queery parameters that wont cause confusion now methodOveride will be looking for query paramether called _method  
+app.use(methodOverride('_method'));
 
 //WHERE WE MOUNT OUT ROUTES!
 app.use('/', indexRouter);
