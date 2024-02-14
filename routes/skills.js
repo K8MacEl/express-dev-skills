@@ -14,8 +14,8 @@ const skillsCtrl = require('../controllers/skills')
 router.get('/', skillsCtrl.index);
 
 //:id is calleda request paremeter
-//GET /todos
+//GET /skills
 router.get('/:id', skillsCtrl.show);
-//GET /todos/:id
+//GET /skills/:id
 module.exports = router;
-// GET /todo/new <--this new route cannot stay here!
+// GET /skill/new <--this new route cannot stay here!
