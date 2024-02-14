@@ -11,8 +11,18 @@ const Skill = require('../models/skill')
 module.exports = {
 	index,
 	show,
-	new: newSkill
+	new: newSkill,
+	create
 };
+
+function create(req, res){
+	console.log(req.body, "Req, body is the contents of our new skills form");
+	// The model is responsible for creating data
+  	//if error is thrown see if removing Model solves it bc class demo included model but repo did not
+	SkillModel.create(req.body);
+  	// Do a redirect anytime data is changed
+	res.redirect('/skills');
+}
 
 //function declaration named 
 function newSkill(req, res){

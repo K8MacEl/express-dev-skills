@@ -9,14 +9,20 @@ const skills = [
   
   module.exports = {
 	getAll, // shorthand for getAll: getAll
-	getOne // shorthand for getOne: GetOne
-
+	getOne, // shorthand for getOne: GetOne
+	create
   };
   
   function getAll() {
 	return skills;
   }
-
+function create(skill){
+	//add the id
+	skill.id = Date.now() % 1000000;
+	//defaults so new skills are not done
+	skill.done = false;
+	skills.push(skill);
+}
   
 
   function getOne(id) {

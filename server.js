@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); //will always match the values of <input>'s name attributes, so for this its skill//
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
