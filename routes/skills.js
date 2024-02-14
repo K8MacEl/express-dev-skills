@@ -13,7 +13,9 @@ const skillsCtrl = require('../controllers/skills')
 // /skills/
 router.get('/', skillsCtrl.index);
 
-//:id is calleda request paremeter
+router.get('/new', skillsCtrl.new);
+
+//:id is called a request paremeter
 //GET /skills
 router.get('/:id', skillsCtrl.show);
 //GET /skills/:id

@@ -10,11 +10,15 @@ const Skill = require('../models/skill')
 //export the index controller method
 module.exports = {
 	index,
-	show
+	show,
+	new: newSkill
 };
 
-
 //function declaration named 
+function newSkill(req, res){
+	res.render('skills/new', { title: "New Skill"});
+}
+
 function index(req, res){
 	res.render('skills/index', {skills: Skill.getAll()
 	}); 
