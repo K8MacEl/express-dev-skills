@@ -12,8 +12,14 @@ module.exports = {
 	index,
 	show,
 	new: newSkill,
-	create
+	create,
+	delete: deleteSkill
 };
+
+function deleteSkill(req, res){
+	Skill.deleteOne(req.params.id);
+	res.redirect('/todo');
+}
 
 function create(req, res){
 	console.log(req.body, "Req, body is the contents of our new skills form");

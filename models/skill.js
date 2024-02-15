@@ -10,8 +10,19 @@ const skills = [
   module.exports = {
 	getAll, // shorthand for getAll: getAll
 	getOne, // shorthand for getOne: GetOne
-	create
+	create,
+	deleteOne
   };
+//set up parameters so add in ID so it knows what to delete
+  function deleteOne(id) {
+	//parseInt converts a string to an integer 
+	id = parseInt(id);
+	//find the index for the todo using an array itrerator method findIndex
+	const idx = skills.findIndex(skill => skill.id === id);
+	//splice returns a new array but we do not care this time
+	//in this we use idx that we just declared and since we want to delete one item its idx, 1
+	skills.splice(idx, 1);
+  }
   
   function getAll() {
 	return skills;
